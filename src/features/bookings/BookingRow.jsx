@@ -4,12 +4,7 @@ import { format, isToday } from "date-fns";
 import Tag from "../../ui/Tag";
 import Table from "../../ui/Table";
 
-import { formatCurrency } from "../../utils/helpers";
-// import { formatDistanceFromNow } from "../../utils/helpers";
-
-
-// i commented several linesofcode because my datefns is having issues, i added No date as a dummy data
-// i need to work on apiboookings and most especially helper.s
+import { formatCurrency, formatDistanceFromNow } from "../../utils/helpers";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -68,7 +63,7 @@ function BookingRow({
       </Stacked>
 
       <Stacked>
-        {/* <span>
+        <span>
           {isToday(new Date(startDate))
             ? "Today"
             : formatDistanceFromNow(startDate)}{" "}
@@ -77,8 +72,7 @@ function BookingRow({
         <span>
           {format(new Date(startDate), "MMM dd yyyy")} &mdash;{" "}
           {format(new Date(endDate), "MMM dd yyyy")}
-        </span> */}
-        No date
+        </span>
       </Stacked>
 
       <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
