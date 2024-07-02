@@ -4,14 +4,21 @@ import supabase from "./supabase";
 export async function getBookings({filter, sortBy}) {
   let query = supabase
     .from("bookings")
-    .select("*, cabins(name), guests(fullName, email)");
+    .select("*, cabins(name), guests(fullName, email)", {count: "exact"});
 
     //FILTER
-    if(filter !== null) query = query[filter.method || "eq"](filter.field, filter.value)
+    if(filter) query = query[filter.method || "eq"](filter.field, filter.value)
       //the same thing
       // if(filter !== null) query = query.eq(filter.field, filter.value)
 
-    const {data, error} = await query;
+
+    // SORT
+
+    if (sortBy)
+      query = query.order(sortBy.field, {
+    ascending: sortBy.direction === "asc"})
+
+    const {data, error, count} = await query;
 
 
     if (error) {
@@ -19,7 +26,7 @@ export async function getBookings({filter, sortBy}) {
       throw new Error("Bookings could not be loaded")
     };
 
-    return data;
+    return {data, count};
 }
 
 export async function getBooking(id) {
