@@ -3,11 +3,11 @@
 export const guests = [
   {
     // id: 1000,
-    fullName: 'Jonas Schmedtmann',
+    fullName: 'Udeh Kingsley',
     email: 'hello@jonas.io',
     nationality: 'Portugal',
     nationalID: '3525436345',
-    countryFlag: 'https://flagcdn.com/pt.svg',
+    countryFlag: 'https://flagcdn.com/ng.svg',
   },
   {
     fullName: 'Jonathan Smith',
