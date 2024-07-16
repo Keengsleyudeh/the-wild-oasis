@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import { Pie, PieChart, ResponsiveContainer, Legend, Tooltip, Cell } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { BsDatabaseAdd } from "react-icons/bs";
 
 const ChartBox = styled.div`
   /* Box */
