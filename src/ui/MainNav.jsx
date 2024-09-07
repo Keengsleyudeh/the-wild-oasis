@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { HiOutlineCalendarDays, HiOutlineCog6Tooth, HiOutlineHome, HiOutlineHomeModern, HiOutlineUsers } from "react-icons/hi2"
+import Uploader from "../data/Uploader";
 
 const NavList = styled.ul`
   display: flex;
@@ -80,7 +81,10 @@ function MainNav() {
           <span>Settings</span>
         </StyledNavLink>
       </li>
+      {/* <Uploader /> */}
     </NavList>
+
+    
   )
 
 }

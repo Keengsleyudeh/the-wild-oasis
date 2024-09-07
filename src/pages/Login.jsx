@@ -22,8 +22,6 @@ function Login() {
         Log in to your account
       </Heading>
       <LoginForm />
-
-      <CabinTable />
     </LoginLayout>
     );
 }
